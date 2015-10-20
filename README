@@ -1,0 +1,96 @@
+Used to generate an email template to report on your weeks Jira activity
+
+Usage:
+./grab.myactivity.sh /path/to/greenhouse_cert.pem output_filename.txt
+./parse.activity.py output_filename.txt
+
+Note:
+On osx you will probably get an error when it tries to run the curl command:
+curl: (35) Unknown SSL protocol error in connection to XXX.XXXX.XXXX:-9824
+I haven't found a solution to this but have read about trying to use the keychain.  It is something to do with the apple implementation of curl.
+
+
+Example output:
+
+Ticket Summary
+Total number of tickets parsed from XML : 80
+5 Oct : 3
+6 Oct : 4
+7 Oct : 7
+8 Oct : 6
+9 Oct : 4
+
+Mon Oct  5 00:00:00 2015
+5 Oct :
+  OMT-876   Mon, 5 Oct 2015 17:24:48 +0100
+     BCA IP migration - Livesite - Nolsearch
+  OMT-1019   Mon, 5 Oct 2015 12:25:28 +0100
+     Installation of switching infrastructure for c9/c10 vpod - CWWTF
+  OMT-1026   Mon, 5 Oct 2015 12:23:25 +0100
+     Order components from Axians / CAEUK
+Tue Oct  6 00:00:00 2015
+6 Oct :
+  OMT-804   Tue, 6 Oct 2015 17:31:06 +0100
+     Migrate existing vhost401 esxi host backend over to rbsov content subnet.
+  MON-4251   Tue, 6 Oct 2015 15:34:39 +0100
+     Zenoss renderer needs restarting
+  NET-1480   Tue, 6 Oct 2015 09:54:36 +0100
+     Constant failed authentication attempts for space
+  NET-1477   Tue, 6 Oct 2015 09:14:51 +0100
+     MAC flapping between be-sw0-d6 and be-sw0-k6
+Wed Oct  7 00:00:00 2015
+7 Oct :
+  OPS-150782   Wed, 7 Oct 2015 15:58:55 +0100
+     Configure Xstore switchports - LIVE @ CWWTF
+  JIRA-5538   Wed, 7 Oct 2015 15:38:19 +0100
+     Jira Magic to create new "Issue type" under INFRA project
+  OMT-1029   Wed, 7 Oct 2015 15:28:08 +0100
+     Decommission be-agg-sw0-z3 / fe-agg-sw0-z3
+  OMT-1030   Wed, 7 Oct 2015 15:26:24 +0100
+     Migrate ESXi hosts from c7000 in z3/z2 over to b3/b4 in TELHC
+  OMT-725   Wed, 7 Oct 2015 13:33:29 +0100
+     Provide Self-admin server for management/monitoring function
+  NET-1486   Wed, 7 Oct 2015 10:12:15 +0100
+     PQ Reith Network - Questions
+  OMT-746   Wed, 7 Oct 2015 08:34:54 +0100
+     Install 1x BIDI INT server - RBSOV
+Thu Oct  8 00:00:00 2015
+8 Oct :
+  NET-1483   Thu, 8 Oct 2015 15:53:25 +0100
+     Deliver required networks in PQ
+  CHANGE-2669   Thu, 8 Oct 2015 14:32:29 +0100
+     IP Change for nolstats04
+  NET-1487   Thu, 8 Oct 2015 13:59:53 +0100
+     PQ Core Network
+  CHANGE-2873   Thu, 8 Oct 2015 13:21:14 +0100
+     nolsearch50 IP Change
+  NET-1481   Thu, 8 Oct 2015 11:25:52 +0100
+     Investigate ingesting of network logs into Splunk
+  OMT-902   Thu, 8 Oct 2015 10:59:22 +0100
+     VM in RBSOV for Gatling testing
+Fri Oct  9 00:00:00 2015
+9 Oct :
+  NET-1476   Fri, 9 Oct 2015 12:49:06 +0100
+     Power cables required in TELHC for be-sw0-b3b4
+  NET-1485   Fri, 9 Oct 2015 11:58:22 +0100
+     PQ Internet Network - Questions
+  NET-1484   Fri, 9 Oct 2015 11:57:39 +0100
+     PQ Content Network - Questions
+
+
+-------------------------
+FORMAT FOR EMAIL BELOW
+
+FM OTG Networks Weekly Report
+
+Date         Ticket Numbers
+
+5 Oct :     OMT-876  OMT-1019  OMT-1026
+
+6 Oct :     OMT-804  MON-4251  NET-1480  NET-1477
+
+7 Oct :     OPS-150782  JIRA-5538  OMT-1029  OMT-1030  OMT-725  NET-1486  OMT-746
+
+8 Oct :     NET-1483  CHANGE-2669  NET-1487  CHANGE-2873  NET-1481  OMT-902
+
+9 Oct :     NET-1476  NET-1485  NET-1484  NET-1482
